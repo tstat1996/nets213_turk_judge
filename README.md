@@ -2,7 +2,6 @@ README
 =======
 
 ## Components 
-Bullet list:
 * Collect images of cars from the web. Work required: 2. Our ideas so far are: 
 
 	1. An image clearly with a car
