@@ -24,6 +24,6 @@ README
 
 
 ##DATA
-We have collected image urls for each of the categories above (image_urls.xlsx).  The input file (see input_file.csv) for Mechanical Turk consists of two columns.  The first is the image url, and the second is the appeal we are testing.  We have included 5 images from each category.  The appeal next to each image is the appeal in the respective category listed above.  If there is two appeals for the category, the image url appears in two rows, one for each appeal.
+We have collected image urls for each of the categories above (image_urls.xlsx).  The input file (see input_file.csv) for Mechanical Turk consists of three columns.  The first is the image url, the second is the appeal we are testing, and the third states whether the appeal is objectively valid, objectively invalid, or is in a "grey zone" with no right or wrong answer.  We have included 5 images from each category.  The appeal next to each image is the appeal in the respective category listed above.  If there is two appeals for the category, the image url appears in two rows, one for each appeal.
 
 There is a sample output file (sample_output.csv) for our quality control model based on what the csv file we would get from Mechanical Turk once our task is completed.  It has fake data in it right now, but the output of the real file would look the same.
