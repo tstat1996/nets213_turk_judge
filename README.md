@@ -21,3 +21,9 @@ README
 * Crowdsourcing the judgement on the appeals on Mechanical Turk at 3 different pay levels: 1 cent, 5 cents, and 10 cents. We will publish each type of appeal, one where the worker got rejected for a right answer and one where the worker got rejected for a wrong answer. Each individual appeals receives its judgement after it has been voted on by 5 workers (could be another number). Work required: 4
 * Aggregation Control. We will collect the results for each payment amount by majority vote and weighted majority vote. Potentially will also do a unanimous vote check to try to simulate an actual jury. Work required: 4.
 * Analyzing the results. We will judge whether there is a difference in the voting/honesty of workers based on how much they are being paid to judge the appeal. We will also analyze whether there is a tendency for workers to side with otehr workers for getting paid. Work required: 4.
+
+
+##DATA
+We have collected image urls for each of the categories above (image_urls.xlsx).  The input file (see input_file.csv) for Mechanical Turk consists of two columns.  The first is the image url, and the second is the appeal we are testing.  We have included 5 images from each category.  The appeal next to each image is the appeal in the respective category listed above.  If there is two appeals for the category, the image url appears in two rows, one for each appeal.
+
+There is a sample output file (sample_output.csv) for our quality control model based on what the csv file we would get from Mechanical Turk once our task is completed.  It has fake data in it right now, but the output of the real file would look the same.
