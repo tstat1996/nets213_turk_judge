@@ -12,7 +12,7 @@ def majority_vote(mturk_res):
             continue;
         assignment = row['AssignmentId']
         reward = row['Reward']
-        validity = row['true_label']
+        validity = row['Input.true_label']
         label = row['Answer.image-rejections.label']
         short_label = ""
         if label == "The Turker should have been rejected.":
@@ -33,50 +33,25 @@ def majority_vote(mturk_res):
 
         if key in hits:
             if short_label == "FAIR":
-                pass
-        else:
-            pass
-
-
-
-
-    lst = []
-    labels = {}
-
-    adj_descr = ['Input.adj_1', 'Input.adj_2', 'Input.adj_3', 'Input.adj_4', 'Input.adj_5', 'Input.adj_6',
-                 'Input.adj_7', 'Input.adj_8', 'Input.adj_9', 'Input.adj_10']
-    adj_label = ['Answer.adj_1', 'Answer.adj_2', 'Answer.adj_3', 'Answer.adj_4', 'Answer.adj_5',
-                 'Answer.adj_6', 'Answer.adj_7', 'Answer.adj_8', 'Answer.adj_9', 'Answer.adj_10']
-
-    for index, row in mturk_res.iterrows():
-        if index == 0:
-            continue;
-        attr_id = row['Input.attr_name']
-        # for each adjective per row, increment its count in labels dictionary
-        # if worker voted yes
-        for i in range(10):
-            adj = row[adj_descr[i]]
-            label = row[adj_label[i]]
-            key = (attr_id, adj)
-            if key in labels:
-                if label == 'Yes':
-                    labels[key] = labels[key] + 1
+                val = hits[key]
+                hits[key] = (val[0] + 1, val[1])
             else:
-                if label == 'Yes':
-                    labels[key] = 1
-                else:
-                    labels[key] = 0
+                val = hits[key]
+                hits[key] = (val[0], val[1] + 1)
+        else:
+            if short_label == "FAIR":
+                hits[key] = (1, 0)
+            else:
+                hits[key] = (0, 1)
 
-    # now I want to create list with majority votes
-    for (x, y) in labels:
-        if labels[(x, y)] >= 2:
-            tup = (x, y, 'TRUE')
+    for key, val in hits.items():
+        if val[0] > val[1]:
+            tup = (key[2], key[1], "FAIR")
             lst.append(tup)
         else:
-            tup = (x, y, 'FALSE')
+            tup = (key[2], key[1], "UNFAIR")
             lst.append(tup)
 
-            # sort list by alphabetical order by first column, then second column
     lst.sort(
         key=lambda l: (l[0], l[1])
     )
@@ -90,7 +65,7 @@ def main():
 
     votes = majority_vote(mturk_res)
     df1 = pd.DataFrame(votes,columns =['attr_id', 'adj', 'label'])
-    df1.to_csv('output1.csv', index=False)
+    df1.to_csv('agg_output.csv', index=False)
 
 if __name__ == '__main__':
     main()
