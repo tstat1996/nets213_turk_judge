@@ -33,3 +33,16 @@ The input file for our aggregation step is the sample output file from the previ
 One aggregation method we implemented was simple majority vote. This took the majority opinion of fair/unfair and labeled a corresponding HIT accordingly. The sample code for this step can be found in the file /src/s_majority.py.
 
 Our quality control methods simply included screening workers that have completed over 100 hits and had a lifetime hit approval of 99% or greater. A sample script for this screening can be found in the file /src/qualified_workers.py. Some changes we may see fit over the course of the project include posting a specialized gold standard hit in order to perform these hit accuracy calculations rather than using lifetime hit approval as these may indicate higher quality for hits that are similar to the gold standard. If we post a gold standard hit that is similar to the appeal hit, then we will be able to screen for workers who would perform our appeal hit tasks well.
+
+
+## Milestones/Progress 
+
+* We've transitioned from image classification HITs to the attribute-adjective matching HITs Jie used. From Jie we collected actual workers appeals from when their work was rejected. We've designed our HIT similar to Jie's but it is all text. Our next step in this is to ask Jie for her HIT template so we can include the original HIT in our HIT.
+
+* For quality control we make the judges do a few gold standard matching and based on the score they receive from those we will either consider their judgement or not. This code is completed.
+
+* Aggregation has been updated to reflect the change from car images to attribute-adjective matchings. 
+
+* HITs have been published on MTurk Sandbox. 
+
+
