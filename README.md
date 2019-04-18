@@ -43,6 +43,9 @@ Our quality control methods simply included screening workers that have complete
 
 * Aggregation has been updated to reflect the change from car images to attribute-adjective matchings. 
 
-* HITs have been published on MTurk Sandbox. 
+* Two HITs will be published, one that is an appeal without the workers reason for appeal, the other is an appeal with the worker's reason for appealing.
+
+* HITs have been published on MTurk Sandbox - titled "Sentiment Analysis" (without appeals) and "Review HIT Appeals" (with appeals).
+
 
 
