@@ -4,6 +4,8 @@ For our project we're asking you to review a Turker's work that was rejected and
 
 To make contributions to our project, go on MechanicalTurk Sandbox and look for the HITs "Sentiment Analysis" and "Review HIT Appeals". (requester Mukund Venkateswaran).
 
-There are two styles of HITs, one that includes the reason for appealing from a worker, and one that does not. The original HIT itself is taken from Jie's work on attribute-adjective matching that we used in Homework 6. We ask you to complete a couple quality control questions before and then you can review the worker's work that was rejected and hand down your judgement. Please complete both HITs. 
+There are two styles of HITs, one that includes the reason for appealing from a worker, and one that does not. The original HIT itself is taken from Jie's work on attribute-adjective matching that we used in Homework 7. We ask you to complete a couple quality control questions before and then you can review the worker's work that was rejected and hand down your judgement. Please complete both HITs. 
 
-If something does not work email: 
+If something does not work, please send an email to:
+
+m17venk@gmail.com
