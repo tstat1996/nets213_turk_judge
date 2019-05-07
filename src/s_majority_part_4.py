@@ -12,22 +12,22 @@ def majority_vote(mturk_res):
             continue;
         assignment = row['HITId']
 
-        correct = True
+        correct = 0
         if row['Input.aneg_qual_ctrl'] != "No":
-            correct = False
+            correct+=1
         if row['Input.apos_qual_ctrl_1'] != "Yes":
-            correct = False
+            correct+=1
         if row['Input.apos_qual_ctrl_2'] != "Yes":
-            correct = False
+            correct+=1
         if row['Input.apos_qual_ctrl_3'] != "Yes":
-            correct = False
+            correct+=1
         if row['Input.apos_qual_ctrl_4'] != "Yes":
-            correct = False
+            correct+=1
         if row['Input.apos_qual_ctrl_5'] != "Yes":
-            correct = False
+            correct+=1
 
         true_label = ""
-        if correct:
+        if correct > 4:
             true_label = "UNFAIR"
         else:
             true_label = "FAIR"
